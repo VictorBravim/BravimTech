@@ -25,7 +25,7 @@ const Nav: React.FC = () => {
       >
         {/* Logo à esquerda */}
         <div className="flex-shrink-0">
-          <img src="/images/logo.svg" alt="Logotipo da empresa" className="h-10 lg:h-16" />
+          <img src="/images/Logo.png" alt="Logotipo da empresa" className="h-10 lg:h-16" />
         </div>
 
         {/* Botões de navegação - Desktop */}
