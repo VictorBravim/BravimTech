@@ -30,13 +30,12 @@ const Hero: React.FC = () => {
         />
       </div>
 
-      {/* Vídeo de fundo (só aparece quando estiver carregado) */}
+      {/* Vídeo de fundo sem controles */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        onLoadedData={() => setVideoLoaded(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
           videoLoaded ? "opacity-100" : "opacity-0"
         }`}

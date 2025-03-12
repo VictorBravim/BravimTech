@@ -16,7 +16,7 @@ const Contact = () => {
       >
         <div className="flex justify-center my-2 lg:my-4">
           <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">
-            <Image src="images/Logo.svg" alt="Logo" width={30} height={30} className="mr-2" />
+            <Image src="/images/Logo.png" alt="Logo" width={30} height={30} className="mr-2" />
             <h1 className="text-white text-md lg:text-lg font-semibold mr-2">Fale Com a Gente</h1>
           </div>
         </div>
