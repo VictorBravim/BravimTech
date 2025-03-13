@@ -101,7 +101,6 @@ const Advantages = () => {
           BravimTech
         </span>
       </h2>
-
       <div className="relative flex items-center justify-center w-full min-h-[500px]">
         <div className="hidden md:block absolute left-0 md:top-60 lg:top-1/2 transform -translate-y-1/2">
           <svg
@@ -209,13 +208,19 @@ const Advantages = () => {
               </ul>
             </motion.div>
           </AnimatePresence>
-          
+
           <div className="flex flex-col md:flex-row justify-between items-center mt-4 md:mt-6 gap-4">
-            <button className="bg-gradient-to-b from-[#0024B4] to-[#0024B4] text-white py-2 md:py-3 lg:py-4 px-4 md:px-6 rounded-lg font-semibold transition cursor-pointer w-full md:w-auto text-sm md:text-base lg:text-lg">
+            <button
+              onClick={() => window.open("https://wa.me/5512996619995", "_blank", "noopener,noreferrer")}
+              className="bg-gradient-to-b from-[#0024B4] to-[#0024B4] text-white py-2 md:py-3 lg:py-4 px-4 md:px-6 rounded-lg font-semibold transition cursor-pointer w-full md:w-auto text-sm md:text-base lg:text-lg"
+            >
               Faça seu orçamento online
             </button>
             <div className="flex gap-2 md:gap-3">
-              <button className="bg-gradient-to-b from-[#FFFFFF] to-[#CDDBFF] p-2 md:p-3 lg:p-4 rounded-lg shadow-md cursor-pointer">
+              <button
+                onClick={() => window.location.href = "mailto:bravimtech@gmail.com"}
+                className="bg-gradient-to-b from-[#FFFFFF] to-[#CDDBFF] p-2 md:p-3 lg:p-4 rounded-lg shadow-md cursor-pointer"
+              >
                 <Mail size={16} className="text-blue-600 md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </button>
               <button

@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
         animate="visible"
       >
         <motion.h1
-          className="text-[30px] sm:text-[40px] md:text-[65px] lg:text-[115px] font-archivo font-normal leading-8 sm:leading-10 md:leading-12 lg:leading-25 tracking-tight mb-2 sm:mb-4 md:mb-6 lg:mb-4"
+          className="text-[45px] sm:text-[40px] md:text-[65px] lg:text-[115px] font-archivo font-normal leading-8 sm:leading-10 md:leading-12 lg:leading-25 tracking-tight mb-4 sm:mb-4 md:mb-6 lg:mb-4"
           style={{ fontFamily: "var(--font-archivo)" }}
           variants={itemVariants}
         >
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
           futuro com rapidez
         </motion.h1>
         <motion.p
-          className="text-white/90 text-xs sm:text-sm md:text-lg lg:text-xl font-roboto max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto mb-2 sm:mb-4 md:mb-8 lg:mb-12"
+          className="text-white/90 text-xs sm:text-sm md:text-lg lg:text-xl font-roboto max-w-md sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto mb-4 sm:mb-4 md:mb-8 lg:mb-12"
           variants={itemVariants}
         >
           Estratégia, performance e tecnologia. Combinamos tudo isso de ponta a ponta para
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
           className="flex justify-center"
           variants={itemVariants}
         >
-          <div className="border border-black/5 bg-black/20 backdrop-blur-[3.5px] rounded-full px-2 sm:px-4 md:px-6 lg:px-8 py-1 sm:py-2 md:py-3 flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
+          <div className="border border-black/5 bg-black/20 backdrop-blur-[3.5px] rounded-full px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2 md:py-3 flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
             {["1. Design UI/UX", "2. Desenvolvimento de sites", "3. Soluções no-code"].map(
               (item) => (
                 <span
