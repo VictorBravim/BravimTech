@@ -85,7 +85,7 @@ const Advantages = () => {
   return (
     <div className="bg-white h-full pb-12 lg:pb-40 pt-12 text-center relative">
       <div className="flex justify-center my-4">
-        <div className="bg-blue-600/10 text-white gap-2 py-2 px-4 flex items-center rounded-full">
+        <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 pr-4 flex items-center rounded-full">
           <Image src="/images/Blue.svg" alt="Logo" width={30} height={30} />
           <h1 className="text-[#3D3D3D] text-md lg:text-lg font-semibold">
             Vantagens
@@ -103,7 +103,6 @@ const Advantages = () => {
       </h2>
 
       <div className="relative flex items-center justify-center w-full min-h-[500px]">
-        {/* SVG Esquerdo */}
         <div className="hidden md:block absolute left-0 md:top-60 lg:top-1/2 transform -translate-y-1/2">
           <svg
             height="710"
@@ -175,8 +174,7 @@ const Advantages = () => {
           </svg>
         </div>
 
-        {/* Card Central com tamanho aumentado */}
-        <div className="bg-white shadow-lg rounded-4xl p-8 lg:p-12 relative border border-gray-200 w-[1050px] h-[600px] flex flex-col justify-between z-10">
+        <div className="bg-white shadow-lg rounded-2xl md:rounded-4xl p-4 md:p-6 lg:p-12 relative border border-gray-200 w-full max-w-[90%] md:max-w-[700px] lg:max-w-[1050px] h-auto min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex flex-col justify-between z-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -186,46 +184,50 @@ const Advantages = () => {
               transition={{ duration: 0.4 }}
               className="flex-1 flex flex-col justify-start"
             >
-              {/* Título com imagem ao lado */}
-              <div className="flex items-center gap-4 mb-4">
-                <Image src="/images/Blue.svg" alt="Logo" width={50} height={50} />
-                <h2 className="text-blue-700 text-2xl lg:text-3xl font-semibold text-left">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 mb-2 md:mb-4">
+                <Image
+                  src="/images/Blue.svg"
+                  alt="Logo"
+                  width={60}
+                  height={60}
+                  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+                />
+                <h2 className="text-blue-700 text-lg md:text-2xl lg:text-4xl font-semibold text-left">
                   {cardTexts[index].title}
                 </h2>
               </div>
-              <p className="text-gray-600 mt-4 text-left">
+              <p className="text-gray-600 mt-2 md:mt-4 text-left text-sm md:text-base lg:text-xl">
                 {cardTexts[index].description}
               </p>
-              <ul className="mt-4 text-left text-gray-700 space-y-2">
+              <ul className="mt-4 md:mt-6 text-left text-sm md:text-base lg:text-xl text-gray-700 space-y-2 md:space-y-4">
                 {cardTexts[index].advantages.map((adv, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <Check size={20} className="text-blue-600" />
+                  <li key={i} className="flex items-center gap-2 md:gap-4">
+                    <Check size={16} className="text-blue-600 md:w-5 md:h-5 lg:w-6 lg:h-6" />
                     {adv}
                   </li>
                 ))}
               </ul>
             </motion.div>
           </AnimatePresence>
-
-          <div className="flex justify-between items-center mt-6">
-            <button className="bg-gradient-to-b from-[#0024B4] to-[#0024B4] text-white py-2 px-6 rounded-lg font-semiboldtransition">
+          
+          <div className="flex flex-col md:flex-row justify-between items-center mt-4 md:mt-6 gap-4">
+            <button className="bg-gradient-to-b from-[#0024B4] to-[#0024B4] text-white py-2 md:py-3 lg:py-4 px-4 md:px-6 rounded-lg font-semibold transition cursor-pointer w-full md:w-auto text-sm md:text-base lg:text-lg">
               Faça seu orçamento online
             </button>
-            <div className="flex gap-3">
-              <button className="bg-gradient-to-b from-[#FFFFFF] to-[#CDDBFF] p-2 rounded-md shadow-md">
-                <Mail size={20} className="text-blue-600" />
+            <div className="flex gap-2 md:gap-3">
+              <button className="bg-gradient-to-b from-[#FFFFFF] to-[#CDDBFF] p-2 md:p-3 lg:p-4 rounded-lg shadow-md cursor-pointer">
+                <Mail size={16} className="text-blue-600 md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </button>
               <button
                 onClick={nextCard}
-                className="bg-gradient-to-b from-[#0751D4] to-[#0024B4] p-2 rounded-md shadow-md"
+                className="bg-gradient-to-b from-[#0751D4] to-[#0024B4] p-2 md:p-3 lg:p-4 rounded-lg shadow-md cursor-pointer"
               >
-                <ArrowRight size={20} className="text-white" />
+                <ArrowRight size={16} className="text-white md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </button>
             </div>
           </div>
         </div>
 
-        {/* SVG Direito */}
         <div className="hidden md:block absolute right-0 md:top-60 lg:top-1/2 transform -translate-y-1/2 scale-[-1]">
           <svg
             height="710"
