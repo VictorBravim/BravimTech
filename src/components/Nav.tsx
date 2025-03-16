@@ -60,7 +60,7 @@ const Nav: React.FC = () => {
       <div
         className={`flex items-center justify-between border border-white/10
           backdrop-blur-[4.5px] px-2 pr-5 lg:pr-2 py-2 rounded-full w-full mx-auto transition-all duration-300
-          ${isScrolled ? "bg-[rgba(80,112,255,0.35)]" : "bg-[rgba(46,68,158,0.05)]"}`}
+          ${isScrolled ? "bg-[rgba(0,34,206,0.5)]" : "bg-[rgba(46,68,158,0.05)]"}`}
       >
         {/* Logo à esquerda */}
         <div className="flex-shrink-0">

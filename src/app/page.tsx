@@ -14,7 +14,6 @@ export default function Home() {
     <div>
       <Nav />
       <Hero />
-      <Tech/>
       <BentoGrid/>
       <Advantages/>
       <Projects/>

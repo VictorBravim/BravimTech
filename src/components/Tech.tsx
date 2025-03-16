@@ -56,18 +56,6 @@ const Tech = () => {
 
     return (
         <div className="overflow-hidden bg-white py-10 text-[#18181B] text-center">
-            <motion.h2
-                className="hidden lg:flex justify-center text-5xl font-bold mb-16"
-                variants={titleVariants}
-                initial="hidden"
-                whileInView="visible" // Animação dispara ao entrar na viewport
-                viewport={{ once: true, amount: 0.3 }} // Anima uma vez, quando 30% do elemento está visível
-            >
-                <span className="bg-gradient-to-b from-[#0071DA] to-[#0024B4] bg-clip-text text-transparent" style={{ fontFamily: "var(--font-archivo)" }}>
-                    Tecnologias
-                </span>{" "}
-                que utilizamos
-            </motion.h2>
             <motion.div
                 className="w-full flex flex-nowrap relative"
                 variants={containerVariants}

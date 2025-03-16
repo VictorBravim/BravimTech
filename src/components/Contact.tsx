@@ -5,7 +5,7 @@ const Contact = () => {
     <div className="bg-white py-12 lg:py-24 text-[#18181B] overflow-hidden flex justify-center">
       {/* Main Contact Card */}
       <div 
-        className="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-6 lg:py-32 px-2 lg:px-48 rounded-xl shadow-lg footer-container w-full text-center"
+        className="text-white py-6 lg:py-32 px-2 lg:px-48 rounded-4xl shadow-lg footer-container w-full text-center"
         style={{
           backgroundImage: 'url("/images/Banner.png")',
           backgroundSize: 'cover',

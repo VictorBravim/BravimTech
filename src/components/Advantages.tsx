@@ -173,7 +173,7 @@ const Advantages = () => {
           </svg>
         </div>
 
-        <div className="bg-white shadow-lg rounded-2xl md:rounded-4xl p-4 md:p-6 lg:p-12 relative border border-gray-200 w-full max-w-[90%] md:max-w-[700px] lg:max-w-[1050px] h-auto min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex flex-col justify-between z-10">
+        <div className="bg-white border-2 border-gray-600/10 rounded-2xl md:rounded-4xl p-4 md:p-6 lg:p-12 relative w-full max-w-[90%] md:max-w-[700px] lg:max-w-[1050px] h-auto min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex flex-col justify-between z-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}

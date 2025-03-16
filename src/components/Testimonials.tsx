@@ -59,7 +59,7 @@ const Testimonial = () => {
         <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">
           <Image src="/images/Blue.svg" alt="Logo" width={30} height={30} />
           <h1 className="text-[#3D3D3D] text-md lg:text-lg font-semibold mr-2">
-            Nossos Clientes
+            Clientes
           </h1>
         </div>
       </div>
@@ -77,9 +77,9 @@ const Testimonial = () => {
 
       <div className="relative w-full flex justify-center gap-[25%] min-h-[554px]">
         <div className="relative top-0">
-          <ClientCard position="-left-30" name={clients[0].name} />
+          <ClientCard position="-left-30 top-[-25px]" name={clients[0].name} />
           <ClientCard position="-left-30 top-[235px]" name={clients[1].name} />
-          <ClientCard position="-left-30 bottom-0" name={clients[2].name} />
+          <ClientCard position="-left-30 bottom-[-25px]" name={clients[2].name} />
 
           <svg
             width="278"
@@ -122,7 +122,7 @@ const Testimonial = () => {
                 rectRefs.current[0] = el;
               }}
               width={trailSize}
-              height="7"
+              height="8"
               fill="#0751D4"
               opacity={0}
               y="-4"
@@ -132,17 +132,17 @@ const Testimonial = () => {
                 rectRefs.current[1] = el;
               }}
               width={trailSize}
-              height="7"
+              height="8"
               fill="#0751D4"
               opacity={0}
-              y="-4"
+              y="-5"
             />
             <rect
               ref={(el) => {
                 rectRefs.current[2] = el;
               }}
               width={trailSize}
-              height="7"
+              height="8"
               fill="#0751D4"
               opacity={0}
               y="-4"
@@ -194,9 +194,9 @@ const Testimonial = () => {
         </div>
 
         <div className="top-0 relative">
-          <ClientCard position="-right-30" name={clients[3].name} />
+          <ClientCard position="-right-30 top-[-25px]" name={clients[3].name} />
           <ClientCard position="-right-30 top-[235px]" name={clients[4].name} />
-          <ClientCard position="-right-30 bottom-0" name={clients[5].name} />
+          <ClientCard position="-right-30 bottom-[-25px]" name={clients[5].name} />
 
           <svg
             width="278"
@@ -242,7 +242,7 @@ const Testimonial = () => {
                 rectRefs.current[3] = el;
               }}
               width={trailSize}
-              height="7"
+              height="8"
               fill="#0751D4"
               opacity={0}
               y="-4"
@@ -252,17 +252,17 @@ const Testimonial = () => {
                 rectRefs.current[4] = el;
               }}
               width={trailSize}
-              height="7"
+              height="8"
               fill="#0751D4"
               opacity={0}
-              y="-4"
+              y="-5"
             />
             <rect
               ref={(el) => {
                 rectRefs.current[5] = el;
               }}
               width={trailSize}
-              height="7"
+              height="8"
               fill="#0751D4"
               opacity={0}
               y="-4"
