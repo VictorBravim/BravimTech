@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Tech from "@/components/Tech";
 import BentoGrid from "@/components/BentoGrid"
 import Advantages from "@/components/Advantages";
 import Projects from "@/components/Projects";
