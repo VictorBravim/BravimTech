@@ -1,360 +1,229 @@
-"use client"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
-import anime from "animejs"
-import { Mail, ArrowRight, Zap, BarChart3, Layers } from "lucide-react"
+import { CheckCircle } from "lucide-react"
+import Link from "next/link"
 
-const Advantages = () => {
-  const cardTexts = [
-    {
-      title: "Desenvolvimento de Sites de Alta Performance",
-      description:
-        "Utilizamos as tecnologias mais recentes para construir sites que são rápidos, seguros e escaláveis. Focamos em otimizar o tempo de carregamento.",
-      advantages: [
-        "Performance otimizada e carregamento rápido",
-        "Experiência do usuário fluida, sem gargalos",
-        "Integração com ferramentas de análise para melhorar continuamente os resultados",
-      ],
-      icon: <Zap className="h-6 w-6 text-blue-600" />,
-    },
-    {
-      title: "SEO e Otimização para Motores de Busca",
-      description:
-        "Nossos sites são desenvolvidos com foco em SEO, garantindo melhor ranqueamento no Google e mais visibilidade para seu negócio.",
-      advantages: [
-        "Estratégias de SEO On-page e Off-page",
-        "Sites otimizados para Google Core Web Vitals",
-        "Melhoria na taxa de conversão e aquisição de clientes",
-      ],
-      icon: <BarChart3 className="h-6 w-6 text-blue-600" />,
-    },
-    {
-      title: "Design Responsivo e Personalizado",
-      description:
-        "Criamos interfaces modernas e responsivas, garantindo um design atrativo e funcional para todos os dispositivos.",
-      advantages: [
-        "Layouts adaptáveis para qualquer tela",
-        "Experiência do usuário aprimorada",
-        "Design alinhado à identidade visual da sua marca",
-      ],
-      icon: <Layers className="h-6 w-6 text-blue-600" />,
-    },
-  ]
-
-  const [index, setIndex] = useState(0)
-  const time = 15000
-  const trailSize = 10
-  const rectRefs = useRef<(SVGRectElement | null)[]>([])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % cardTexts.length)
-    }, time)
-    return () => clearInterval(interval)
-  }, [cardTexts.length, time])
-
-  useEffect(() => {
-    if (rectRefs.current.every((ref) => ref)) {
-      rectRefs.current.forEach((rect, i) => {
-        const path = anime.path(`#motionPath${i}`)
-        anime({
-          targets: rect,
-          translateX: path("x"),
-          translateY: path("y"),
-          rotate: path("angle"),
-          easing: "linear",
-          duration: 3000,
-          loop: true,
-          delay: i * 200,
-          opacity: [
-            { value: 1, duration: 2800 },
-            { value: 0, duration: 100 },
-          ],
-        })
-      })
-    }
-    return () => anime.remove(rectRefs.current.filter(Boolean))
-  }, [])
-
-  const nextCard = () => setIndex((prevIndex) => (prevIndex + 1) % cardTexts.length)
-
+export default function FAQSection() {
   return (
-    <div className="bg-white h-full pb-12 lg:pb-40 pt-12 text-center relative">
-      <div className="flex justify-center my-4">
-        <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 pr-4 flex items-center rounded-full">
-          <Image src="/images/Blue.svg" alt="Logo" width={30} height={30} />
-          <h1 className="text-[#3D3D3D] text-md lg:text-lg font-semibold">Vantagens</h1>
-        </div>
-      </div>
-      <h2
-        className="text-[#18181B] text-3xl lg:text-5xl font-semibold lg:leading-[3rem] tracking-tight mb-24"
-        style={{ fontFamily: "var(--font-archivo)" }}
-      >
-        Descubra as vantagens <br />
-        oferecidas na{" "}
-        <span
-          className="bg-gradient-to-b from-[#0071DA] to-[#0024B4] bg-clip-text text-transparent"
-          style={{ fontFamily: "var(--font-archivo)" }}
-        >
-          BravimTech
-        </span>
-      </h2>
-
-      {/* Layout mais comprido verticalmente */}
-      <div className="relative flex items-center justify-center w-full min-h-[500px]">
-        {/* Path esquerdo original */}
-        <div className="hidden md:block absolute left-0 md:top-60 lg:top-1/2 transform -translate-y-1/2">
-          <svg height="710" viewBox="0 0 435 710" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path
-              d="M0 706H172.591C186.399 706 197.592 694.807 197.592 681V565C197.592 551.193 208.784 540 222.592 540H435"
-              stroke="#EBEBEB"
-              strokeWidth="7"
-            />
-            <path
-              d="M0 4H172.591C186.399 4 197.592 15.1929 197.592 29V145C197.592 158.807 208.784 170 222.592 170H435"
-              stroke="#EBEBEB"
-              strokeWidth="7"
-            />
-            <path d="M0.5 353.5V359.5H434.5V353.5H0.5Z" fill="#EBEBEB" stroke="#EBEBEB" />
-            <path
-              id="motionPath0"
-              d="M0 706H172.591C186.399 706 197.592 694.807 197.592 681V565C197.592 551.193 208.784 540 222.592 540H435"
-              style={{ visibility: "hidden" }}
-            />
-            <path
-              id="motionPath1"
-              d="M0 4H172.591C186.399 4 197.592 15.1929 197.592 29V145C197.592 158.807 208.784 170 222.592 170H435"
-              style={{ visibility: "hidden" }}
-            />
-            <path id="motionPath2" d="M0.5 356.5H434.5" style={{ visibility: "hidden" }} />
-            <rect
-              ref={(el) => {
-                rectRefs.current[0] = el
-              }}
-              width={trailSize}
-              height="7"
-              fill="#0751D4"
-              opacity={0}
-              y="-4"
-            />
-            <rect
-              ref={(el) => {
-                rectRefs.current[1] = el
-              }}
-              width={trailSize}
-              height="7"
-              fill="#0751D4"
-              opacity={0}
-              y="-4"
-            />
-            <rect
-              ref={(el) => {
-                rectRefs.current[2] = el
-              }}
-              width={trailSize}
-              height="7"
-              fill="#0751D4"
-              opacity={0}
-              y="-4"
-            />
-          </svg>
+    <section className="w-full py-16 bg-white text-black">
+      <div className="container px-4 md:px-6 mx-auto max-w-6xl">
+        <div className="flex flex-col items-center mb-12 text-center">
+          <span className="mb-3 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+            Perguntas Frequentes
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">
+            Por que escolher nossa <span className="text-blue-600">Agência</span>?
+          </h2>
+          <p className="text-gray-500 max-w-[700px]">
+            Tire suas dúvidas e descubra as vantagens de desenvolver seu site conosco
+          </p>
         </div>
 
-        {/* Card principal mais comprido verticalmente */}
-        <div className="w-full max-w-[90%] md:max-w-[700px] lg:max-w-[1100px] relative z-10">
-          {/* Card futurista mais comprido */}
-          <div className="bg-white rounded-2xl shadow-lg border border-blue-100 overflow-hidden relative flex flex-col">
-            {/* Barra superior com indicadores */}
-            <div className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 h-1.5"></div>
-
-            {/* Cabeçalho com navegação */}
-            <div className="bg-blue-50 p-4 flex justify-between items-center border-b border-blue-100">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-8 bg-blue-500 rounded-full"></div>
-                <h3 className="text-blue-700 font-bold text-lg md:text-xl">Vantagens BravimTech</h3>
-              </div>
-
-              <div className="flex items-center gap-3">
-                {cardTexts.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setIndex(i)}
-                    className={`w-8 h-1.5 rounded-full transition-colors ${i === index ? "bg-blue-600" : "bg-blue-200 hover:bg-blue-300"}`}
-                    aria-label={`Ver vantagem ${i + 1}`}
-                  />
-                ))}
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-blue-50 rounded-xl p-6 flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mb-4 text-xl font-bold">
+              10+
             </div>
+            <h3 className="font-medium text-lg mb-1">Anos de experiência</h3>
+            <p className="text-gray-500 text-sm">Expertise comprovada no mercado</p>
+          </div>
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="flex flex-col"
-              >
-                {/* Seção do título e ícone */}
-                <div className="p-6 pb-0 flex items-center gap-4">
-                  <div className="bg-blue-50 p-3 rounded-full border border-blue-200 shadow-sm relative">
-                    <div
-                      className="absolute inset-0 rounded-full border-t border-r border-blue-300 animate-spin"
-                      style={{ animationDuration: "15s" }}
-                    ></div>
-                    <div className="relative z-10">{cardTexts[index].icon}</div>
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="text-xs text-blue-500 mb-1">
-                      Módulo {index + 1}/{cardTexts.length}
-                    </div>
-                    <h2 className="text-blue-700 font-bold text-xl md:text-2xl">{cardTexts[index].title}</h2>
-                  </div>
-                </div>
-
-                {/* Seção da descrição */}
-                <div className="p-6 pt-4">
-                  <div className="bg-gradient-to-r from-blue-50 to-white rounded-xl border border-blue-100 p-4 relative">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-blue-100/30 rounded-bl-full -z-0"></div>
-                    <div className="relative z-10">
-                      <div className="text-sm text-blue-600 font-medium mb-2 flex items-center gap-1.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                        Descrição
-                      </div>
-                      <p className="text-slate-600 text-sm">{cardTexts[index].description}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Seção das vantagens */}
-                <div className="px-6 pb-6">
-                  <div className="text-sm text-blue-600 font-medium mb-3 flex items-center gap-1.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                    Vantagens Principais
-                  </div>
-
-                  <div className="space-y-3">
-                    {cardTexts[index].advantages.map((adv, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.1, duration: 0.3 }}
-                      >
-                        <div className="bg-white rounded-xl border border-blue-100 p-4 flex items-start gap-3 group hover:border-blue-300 hover:shadow-sm transition-all">
-                          <div className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm border border-blue-200 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                            {i + 1}
-                          </div>
-
-                          <div className="flex-1">
-                            <p className="text-slate-700">{adv}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Seção de ação */}
-                <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6 border-t border-blue-100">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <button
-                      onClick={() => window.open("https://wa.me/5512996619995", "_blank", "noopener,noreferrer")}
-                      className="bg-blue-600 hover:bg-blue-500 text-white py-3 px-6 rounded-xl text-sm md:text-base font-medium transition flex items-center justify-center gap-2 shadow-sm hover:shadow"
-                    >
-                      Faça seu orçamento online
-                      <ArrowRight size={18} />
-                    </button>
-
-                    <div className="flex items-center gap-3 justify-center md:justify-end">
-                      <button
-                        onClick={() => (window.location.href = "mailto:bravimtech@gmail.com")}
-                        className="bg-white p-3 rounded-xl cursor-pointer border border-blue-200 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow flex items-center gap-2"
-                      >
-                        <Mail size={18} className="text-blue-600" />
-                        <span className="text-blue-700 text-sm font-medium">Contato</span>
-                      </button>
-
-                      <button
-                        onClick={nextCard}
-                        className="bg-blue-600 hover:bg-blue-500 p-3 rounded-xl cursor-pointer border border-blue-500 transition-all duration-300 shadow-sm hover:shadow"
-                      >
-                        <ArrowRight size={18} className="text-white" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Elementos futuristas decorativos */}
-            <div className="absolute top-0 right-0 w-40 h-40 border border-blue-100 rounded-full opacity-10 -translate-x-1/2 translate-y-1/4"></div>
-            <div className="absolute bottom-0 left-0 w-60 h-60 border border-blue-100 rounded-full opacity-10 translate-x-1/4 -translate-y-1/4"></div>
+          <div className="bg-blue-50 rounded-xl p-6 flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mb-4 text-xl font-bold">
+              98%
+            </div>
+            <h3 className="font-medium text-lg mb-1">Satisfação garantida</h3>
+            <p className="text-gray-500 text-sm">Clientes que recomendam nossos serviços</p>
           </div>
         </div>
 
-        {/* Path direito original */}
-        <div className="hidden md:block absolute right-0 md:top-60 lg:top-1/2 transform -translate-y-1/2 scale-[-1]">
-          <svg height="710" viewBox="0 0 435 710" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path
-              d="M0 706H172.591C186.399 706 197.592 694.807 197.592 681V565C197.592 551.193 208.784 540 222.592 540H435"
-              stroke="#EBEBEB"
-              strokeWidth="7"
-            />
-            <path
-              d="M0 4H172.591C186.399 4 197.592 15.1929 197.592 29V145C197.592 158.807 208.784 170 222.592 170H435"
-              stroke="#EBEBEB"
-              strokeWidth="7"
-            />
-            <path d="M0.5 353.5V359.5H434.5V353.5H0.5Z" fill="#EBEBEB" stroke="#EBEBEB" />
-            <path
-              id="motionPath3"
-              d="M0 706H172.591C186.399 706 197.592 694.807 197.592 681V565C197.592 551.193 208.784 540 222.592 540H435"
-              style={{ visibility: "hidden" }}
-            />
-            <path
-              id="motionPath4"
-              d="M0 4H172.591C186.399 4 197.592 15.1929 197.592 29V145C197.592 158.807 208.784 170 222.592 170H435"
-              style={{ visibility: "hidden" }}
-            />
-            <path id="motionPath5" d="M0.5 356.5H434.5" style={{ visibility: "hidden" }} />
-            <rect
-              ref={(el) => {
-                rectRefs.current[3] = el
-              }}
-              width={trailSize}
-              height="7"
-              fill="#0751D4"
-              opacity={0}
-              y="-4"
-            />
-            <rect
-              ref={(el) => {
-                rectRefs.current[4] = el
-              }}
-              width={trailSize}
-              height="7"
-              fill="#0751D4"
-              opacity={0}
-              y="-4"
-            />
-            <rect
-              ref={(el) => {
-                rectRefs.current[5] = el
-              }}
-              width={trailSize}
-              height="7"
-              fill="#0751D4"
-              opacity={0}
-              y="-4"
-            />
-          </svg>
+        <div className="w-full max-w-3xl mx-auto">
+          <details className="border-b border-gray-200 py-4">
+            <summary className="text-left font-medium cursor-pointer flex items-center justify-between">
+              Quais são as vantagens de ter um site profissional para meu negócio?
+              <svg
+                className="w-5 h-5 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="space-y-3 pt-2">
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Aumento da credibilidade e profissionalismo da sua marca</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Disponibilidade 24/7 para seus clientes, mesmo quando sua empresa está fechada</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Alcance global, expandindo seu mercado potencial além das limitações geográficas</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Geração de leads e conversões através de estratégias digitais eficientes</p>
+              </div>
+            </div>
+          </details>
+
+          <details className="border-b border-gray-200 py-4">
+            <summary className="text-left font-medium cursor-pointer flex items-center justify-between">
+              Por que contratar nossa agência em vez de usar plataformas de criação de sites?
+              <svg
+                className="w-5 h-5 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="space-y-3 pt-2">
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Sites totalmente personalizados que refletem a identidade única da sua marca</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Otimização avançada de SEO para melhor posicionamento nos motores de busca</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Desenvolvimento com foco em performance e velocidade de carregamento</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Suporte técnico especializado e manutenção contínua após o lançamento</p>
+              </div>
+            </div>
+          </details>
+
+          <details className="border-b border-gray-200 py-4">
+            <summary className="text-left font-medium cursor-pointer flex items-center justify-between">
+              Quanto tempo leva para desenvolver um site profissional?
+              <svg
+                className="w-5 h-5 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div>
+              <p className="pb-2">
+                O prazo de desenvolvimento varia conforme a complexidade do projeto, mas nosso processo otimizado
+                garante:
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>Sites institucionais: de 2 a 4 semanas</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>E-commerces: de 4 a 8 semanas</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>Plataformas web complexas: de 8 a 12 semanas</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>Acompanhamento em tempo real do progresso do seu projeto</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details className="border-b border-gray-200 py-4">
+            <summary className="text-left font-medium cursor-pointer flex items-center justify-between">
+              Quais tecnologias utilizamos em nossos projetos?
+              <svg
+                className="w-5 h-5 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div>
+              <p className="pb-2">Trabalhamos com as tecnologias mais modernas e eficientes do mercado:</p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>React e Next.js para interfaces dinâmicas e de alta performance</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>HTML5, CSS3 e JavaScript para estruturas web robustas e responsivas</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>Node.js e APIs modernas para backend escalável e seguro</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <p>Integração com as principais plataformas de pagamento, CRM e marketing</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details className="border-b border-gray-200 py-4">
+            <summary className="text-left font-medium cursor-pointer flex items-center justify-between">
+              O que está incluído no serviço de criação de sites?
+              <svg
+                className="w-5 h-5 transform transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="space-y-3 pt-2">
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Consultoria estratégica para entender seus objetivos de negócio</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Design personalizado e responsivo para todos os dispositivos</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Otimização para mecanismos de busca (SEO) e performance</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Integração com redes sociais e ferramentas de marketing</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p>Treinamento para gerenciamento de conteúdo e suporte técnico</p>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Link
+            href="#contato"
+            className="inline-flex items-center justify-center rounded-md bg-blue-600 px-8 py-3 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700"
+          >
+            Solicitar Orçamento
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
-
-export default Advantages
