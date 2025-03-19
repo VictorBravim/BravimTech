@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Importando motion
+import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -14,14 +14,13 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  // Definições de animação para os elementos
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Atraso entre os filhos
-        delayChildren: 0.3, // Atraso inicial antes de começar
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
     },
   };
@@ -40,11 +39,9 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-8 lg:px-16">
-      {/* Placeholder: Imagem de fundo */}
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-          videoLoaded ? "opacity-0" : "opacity-100"
-        }`}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"
+          }`}
       >
         <Image
           src="/images/Banner.png"
@@ -55,20 +52,17 @@ const Hero: React.FC = () => {
         />
       </div>
 
-      {/* Vídeo de fundo sem controles */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-          videoLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"
+          }`}
       >
         <source src="/videos/background.webm" type="video/webm" />
       </video>
 
-      {/* Conteúdo centralizado com animação */}
       <motion.div
         className="relative z-10 text-center text-white px-4 sm:px-6 md:px-8 lg:px-4 lg:max-w-5xl"
         variants={containerVariants}
@@ -91,7 +85,6 @@ const Hero: React.FC = () => {
           criar soluções que vão impulsionar o seu sucesso.
         </motion.p>
 
-        {/* Card com 3 itens */}
         <motion.div
           className="flex justify-center"
           variants={itemVariants}

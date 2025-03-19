@@ -3,7 +3,6 @@ import Image from "next/image";
 const Contact = () => {
   return (
     <div className="bg-white py-12 lg:py-24 text-[#18181B] overflow-hidden flex justify-center">
-      {/* Main Contact Card */}
       <div 
         className="text-white py-6 lg:py-32 px-2 lg:px-48 rounded-4xl shadow-lg footer-container w-full text-center"
         style={{
@@ -11,7 +10,7 @@ const Contact = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundBlendMode: 'overlay' // Adicionei isso para o gradiente se misturar com a imagem
+          backgroundBlendMode: 'overlay'
         }}
       >
         <div className="flex justify-center my-2 lg:my-4">

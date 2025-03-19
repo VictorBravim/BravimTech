@@ -21,7 +21,7 @@ const Testimonial = () => {
     { name: "Pablo", description: "...", rating: 3 },
     { name: "Victor", description: "...", rating: 3 },
   ], []);
-  
+
 
   const [index, setIndex] = useState<number>(0);
   const time: number = 3000;
@@ -51,29 +51,29 @@ const Testimonial = () => {
       });
     }
     return () => anime.remove(rectRefs.current.filter(Boolean));
-  }, [index]);   
+  }, [index]);
 
   return (
     <div className="bg-white py-12 lg:py-24 px-[48px] text-[#18181B] overflow-hidden relative">
-      <div className="flex justify-center my-2 lg:my-4">
-        <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">
-          <Image src="/images/Blue.svg" alt="Logo" width={30} height={30} />
-          <h1 className="text-[#3D3D3D] text-md lg:text-lg font-semibold mr-2">
-            Clientes
-          </h1>
+      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+        <div className="flex justify-center my-2">
+          <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">
+            <Image src="/images/Blue.svg" alt="Logo" width={28} height={28} className="mr-1" />
+            <h1
+              className="text-black text-sm sm:text-md font-medium mr-2"
+              style={{ fontFamily: "var(--font-archivo)" }}
+            >
+              Comentario de clientes
+            </h1>
+          </div>
         </div>
+        <h2
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600"
+          style={{ fontFamily: "var(--font-archivo)" }}
+        >
+          Oque os clientes falam?
+        </h2>
       </div>
-      <h2
-        className="text-center text-[#18181B] text-3xl lg:text-5xl font-semibold lg:leading-12 tracking-tight mb-12"
-        style={{ fontFamily: "var(--font-archivo)" }}
-      >
-        O que os{" "}
-        <span className="bg-gradient-to-b from-[#0071DA] to-[#0024B4] bg-clip-text text-transparent">
-          clientes dizem
-        </span>{" "}
-        <br />
-        Sobre o Nosso Serviço
-      </h2>
 
       <div className="relative w-full flex justify-center gap-[25%] min-h-[554px]">
         <div className="relative top-0">
