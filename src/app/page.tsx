@@ -5,7 +5,7 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Pricing from "@/components/Pricing";
 import Testimonial from "@/components/Testimonials";
-import Advantages from "@/components/Advantages";
+import Advantages from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 

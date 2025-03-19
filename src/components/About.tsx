@@ -263,8 +263,8 @@ const FuturisticAbout = () => {
                   }
                 >
                   <tech.icon
-                    size={24} // sm
-                    className="sm:h-8 sm:w-8 text-gray-600 group-hover:text-[color:var(--hover-color)] transition-colors" // lg: size-32
+                    size={24}
+                    className="sm:h-8 sm:w-8 text-gray-600 group-hover:text-[color:var(--hover-color)] transition-colors"
                     style={{ "--hover-color": tech.color } as React.CSSProperties}
                   />
                   <span className="mt-2 sm:mt-3 font-medium text-xs sm:text-sm text-gray-700 group-hover:text-gray-900 transition-colors">

@@ -7,7 +7,7 @@ type clientCard = {
 
 const ClientCard = ({ position, name}: clientCard) => (
   <div
-    className={`z-10 hidden lg:block absolute ${position} w-[200px] p-4 bg-white rounded-2xl shadow-2xl font-medium gap-5 transition-all duration-500 delay-1000`}
+    className={`z-10 hidden lg:block absolute ${position} w-[200px] border border-gray-200 rounded-xl sm:rounded-2xl p-2 sm:p-3 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg bg-white font-medium gap-5 transition-all duration-500 delay-1000`}
   >
     <div className="flex items-center gap-2">
       <Image

@@ -166,20 +166,20 @@ export default function FAQSection() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-blue-500/20 backdrop-blur-sm rounded-lg sm:rounded-xl p-5 sm:p-7 flex flex-col items-center text-center"
+                  className="border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg flex flex-col items-center text-center"
                 >
                   <div className="w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-blue-500 text-white flex items-center justify-center mb-3 sm:mb-4 text-lg sm:text-xl font-bold">
                     {stat.value}
                   </div>
                   <h3 className="font-medium text-base sm:text-lg mb-1">{stat.label}</h3>
-                  <p className="text-blue-100 text-xs sm:text-sm">{stat.subtext}</p>
+                  <p className="text-blue-300 text-xs sm:text-sm">{stat.subtext}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="md:col-span-8">
-            <div className="bg-blue-100 backdrop-blur-sm rounded-lg sm:rounded-xl px-4 sm:px-8 pb-6 sm:pb-8 pt-4 sm:pt-5.5">
+            <div className="border border-gray-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg pb-6 sm:pb-8 pt-5.5 sm:pt-5">
               <div className="flex flex-col sm:flex-row border-b border-blue-400/30 mb-4 sm:mb-6">
                 <button
                   onClick={() => setActiveTab("vantagens")}

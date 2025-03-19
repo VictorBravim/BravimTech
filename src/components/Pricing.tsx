@@ -27,7 +27,7 @@ export default function PricingSection() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 px-0 sm:px-10 md:px-16 lg:px-20">
-        <div className="border-2 border-blue-500 text-black hover:shadow-lg transition-all duration-300 rounded-2xl sm:rounded-3xl flex flex-col items-center justify-between p-4 sm:p-6">
+        <div className="border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg text-black transition-all duration-300 flex flex-col items-center justify-between">
           <div className="bg-blue-100 text-blue-700 rounded-full w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center mb-4">
             <span className="font-bold text-lg sm:text-xl">R$</span>
           </div>
@@ -62,7 +62,7 @@ export default function PricingSection() {
           </Link>
         </div>
 
-        <div className="border-2 border-blue-500 text-black shadow-lg relative rounded-2xl sm:rounded-3xl flex flex-col items-center justify-between p-4 sm:p-6">
+        <div className="border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg text-black relative flex flex-col items-center justify-between">
           <div className="absolute top-0 right-0 bg-blue-600 text-white px-2 sm:px-3 py-1 rounded-bl-md sm:rounded-bl-lg rounded-tr-xl sm:rounded-tr-2xl text-xs sm:text-sm font-medium">
             Mais Popular
           </div>
@@ -100,7 +100,7 @@ export default function PricingSection() {
           </Link>
         </div>
 
-        <div className="border-2 border-blue-500 text-black hover:shadow-lg transition-all duration-300 rounded-2xl sm:rounded-3xl flex flex-col items-center justify-between p-4 sm:p-6">
+        <div className="border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg text-black transition-all duration-300 flex flex-col items-center justify-between">
           <div className="bg-blue-100 text-blue-700 rounded-full w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center mb-4">
             <span className="font-bold text-lg sm:text-xl">R$</span>
           </div>

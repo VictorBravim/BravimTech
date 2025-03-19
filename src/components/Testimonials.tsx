@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import ClientCard from "./clientCards";
+import ClientCard from "@/components/ClientCards";
 import { motion, AnimatePresence } from "framer-motion";
 import anime from "animejs";
 import { useEffect, useRef, useState, useMemo } from "react";
@@ -150,7 +150,7 @@ const Testimonial = () => {
           </svg>
         </div>
 
-        <div className="absolute overflow-hidden mx-auto left-0 right-0 bottom-0 md:max-w-[500px] lg:max-w-[550px] h-[450px] flex flex-col gap-10 top-20 z-20">
+        <div className="absolute mx-auto left-0 right-0 bottom-0 md:max-w-[500px] lg:max-w-[550px] h-[500px] flex flex-col gap-10 top-18 z-20">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -161,11 +161,11 @@ const Testimonial = () => {
               className="flex flex-col gap-4"
             >
               <motion.div
-                initial={{ y: -30 }}
+                initial={{ y: -10 }} // Reduzido de -30 para -10
                 animate={{ y: 0 }}
-                exit={{ y: -30 }}
+                exit={{ y: -10 }} // Reduzido de -30 para -10
                 transition={{ duration: 0.3, delay: 1, ease: "backInOut" }}
-                className="p-4 bg-white rounded-2xl font-medium flex items-center justify-between gap-10 shadow-xl"
+                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg font-medium flex items-center justify-between gap-10"
               >
                 <Image
                   src="/images/TestimonalUser.svg"
@@ -182,7 +182,7 @@ const Testimonial = () => {
                 />
               </motion.div>
 
-              <div className="p-4 bg-white rounded-2xl flex flex-col justify-start h-[300px] items-center font-inter font-light text-center shadow-xl">
+              <div className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg flex flex-col justify-start h-[300px] items-center font-inter font-light text-center">
                 <p>{clients[index].description}</p>
                 <div className="mt-4 text-yellow-400">
                   {"★".repeat(clients[index].rating)}

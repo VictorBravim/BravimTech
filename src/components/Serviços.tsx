@@ -45,11 +45,11 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full ">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:translate-y-[-8px] group relative overflow-hidden"
+              className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] transition-all duration-300 hover:translate-y-[-8px] group relative overflow-hidden"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-5 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.2)_0%,transparent_60%)]"></div>
               <div className="absolute top-0 right-0 w-32 h-32 -mt-10 -mr-10 rounded-full bg-blue-50 opacity-20"></div>
