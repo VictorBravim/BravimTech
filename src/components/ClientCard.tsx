@@ -11,7 +11,7 @@ const ClientCard = ({ position, name}: clientCard) => (
   >
     <div className="flex items-center gap-2">
       <Image
-        src="images/TestimonalUser.svg"
+        src="/images/TestimonalUser.svg"
         alt="Logo"
         width={35}
         height={35}

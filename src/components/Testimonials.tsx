@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import ClientCard from "@/components/ClientCards";
+import ClientCard from "@/components/ClientCard";
 import { motion, AnimatePresence } from "framer-motion";
 import anime from "animejs";
 import { useEffect, useRef, useState, useMemo } from "react";
@@ -54,8 +54,8 @@ const Testimonial = () => {
   }, [index]);
 
   return (
-    <div className="bg-white py-12 lg:py-24 px-[48px] text-[#18181B] overflow-hidden relative">
-      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+    <div className="bg-white py-4 lg:py-12 px-[48px] text-[#18181B] overflow-hidden relative">
+      <div className="text-center mb-0 lg:mb-12">
         <div className="flex justify-center my-2">
           <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">
             <Image src="/images/Blue.svg" alt="Logo" width={28} height={28} className="mr-1" />
@@ -68,7 +68,7 @@ const Testimonial = () => {
           </div>
         </div>
         <h2
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-0 lg:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600"
           style={{ fontFamily: "var(--font-archivo)" }}
         >
           Oque os clientes falam?

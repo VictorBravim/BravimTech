@@ -31,9 +31,9 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section className="w-full bg-white py-24">
-      <div className="px-4 sm:px-6 md:px-12 lg:px-72 flex flex-col justify-center items-center">
-        <div className="text-center mb-12">
+    <section className="flex justify-center w-full bg-white py-4 lg:py-12 pt-8 lg:pt-24">
+      <div className="container px-4 sm:px-6 md:px-16 flex flex-col justify-center items-center">
+        <div className="text-center mb-2 lg:mb-12">
           <div className="flex justify-center my-2">
             <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">
               <Image src="/images/Blue.svg" alt="Logo" width={28} height={28} className="mr-1" />

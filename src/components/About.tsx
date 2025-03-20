@@ -5,7 +5,7 @@ import Image from "next/image"
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaGithub } from "react-icons/fa"
 import { motion, AnimatePresence } from "framer-motion"
 
-const FuturisticAbout = () => {
+const About = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
@@ -61,11 +61,11 @@ const FuturisticAbout = () => {
   const rotation = calculateRotation(mousePosition.x, mousePosition.y)
 
   return (
-    <div className="relative min-h-screen bg-white text-gray-900 overflow-hidden py-8 sm:py-12 lg:py-16">
-      <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(circle_at_center,#f0f4ff,#fff_70%)] opacity-70" />
+    <section className="flex justify-center w-full bg-white py-4 lg:py-12">
+    <div className=" bg-white text-gray-900 overflow-hidden py-8 sm:py-12 lg:py-16">
       <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-blue-200/30 blur-[80px]" />
 
-      <div className="px-4 sm:px-6 md:px-12 lg:px-72 relative z-10">
+      <div className="container px-4 sm:px-6 md:px-16 relative z-10">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="text-center mb-8 sm:mb-12">
@@ -75,7 +75,7 @@ const FuturisticAbout = () => {
                   <h1 className="text-black text-sm sm:text-md font-medium mr-2" style={{ fontFamily: "var(--font-archivo)" }}>Sobre nós</h1>
                 </div>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600" style={{ fontFamily: "var(--font-archivo)" }}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 lg:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600" style={{ fontFamily: "var(--font-archivo)" }}>
                 Sobre a BravimTech
               </h2>
             </div>
@@ -284,7 +284,8 @@ const FuturisticAbout = () => {
         </div>
       </div>
     </div>
+    </section>
   )
 }
 
-export default FuturisticAbout
+export default About

@@ -138,8 +138,8 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="w-full py-8 sm:py-12 lg:py-16 bg-white text-black">
-      <div className="px-4 sm:px-8 md:px-16 lg:px-64">
+    <section className="flex justify-center w-full bg-white py-4 lg:py-12 text-black">
+      <div className="container px-4 sm:px-6 md:px-16">
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <div className="flex justify-center my-2">
             <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">

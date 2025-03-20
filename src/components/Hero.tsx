@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
         animate="visible"
       >
         <motion.h1
-          className="text-[45px] sm:text-[40px] md:text-[65px] lg:text-[115px] font-archivo font-normal leading-8 sm:leading-10 md:leading-12 lg:leading-25 tracking-tight mb-4 sm:mb-4 md:mb-6 lg:mb-4"
+          className="text-[45px] sm:text-[40px] md:text-[65px] lg:text-[115px] font-archivo font-normal leading-10 sm:leading-10 md:leading-12 lg:leading-25 tracking-tight mb-4 sm:mb-4 md:mb-6 lg:mb-4"
           style={{ fontFamily: "var(--font-archivo)" }}
           variants={itemVariants}
         >
@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               (item) => (
                 <span
                   key={item}
-                  className="text-xs sm:text-sm md:text-md lg:text-md font-normal text-white"
+                  className="text-sm sm:text-sm md:text-md lg:text-md font-normal text-white"
                   style={{ fontFamily: "var(--font-archivo)" }}
                 >
                   {item}

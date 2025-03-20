@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // Importando motion
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const Nav: React.FC = () => {
@@ -17,9 +17,8 @@ const Nav: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Definições de animação para a entrada da nav
   const navVariants = {
-    hidden: { y: "-100%", opacity: 0 }, // Inicia fora da tela (acima) com opacidade 0
+    hidden: { y: "-100%", opacity: 0 },
     visible: { 
       y: 0, 
       opacity: 1, 
@@ -30,9 +29,8 @@ const Nav: React.FC = () => {
     },
   };
 
-  // Definições de animação para o menu mobile
   const menuVariants = {
-    hidden: { opacity: 0, scale: 0.9 }, // Inicia com opacidade 0 e escala reduzida
+    hidden: { opacity: 0, scale: 0.9 },
     visible: { 
       opacity: 1, 
       scale: 1, 
@@ -52,33 +50,33 @@ const Nav: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-8 left-1/2 transform -translate-x-1/2 z-40 w-full max-w-[1920px] px-6 md:px-16 lg:px-64"
-      initial="hidden" // Estado inicial
-      animate="visible" // Estado animado ao carregar
-      variants={navVariants} // Variantes de animação
+      className="fixed top-4 left-0 right-0 z-40 w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32"
+      initial="hidden"
+      animate="visible"
+      variants={navVariants}
     >
       <div
         className={`flex items-center justify-between border border-white/10
-          backdrop-blur-[4.5px] px-2 pr-5 lg:pr-2 py-2 rounded-full w-full mx-auto transition-all duration-300
+          backdrop-blur-[4.5px] px-2 py-2 rounded-full w-full max-w-7xl mx-auto transition-all duration-300
           ${isScrolled ? "bg-[rgba(0,34,206,0.5)]" : "bg-[rgba(46,68,158,0.05)]"}`}
       >
-        {/* Logo à esquerda */}
+        {/* Logo */}
         <div className="flex-shrink-0">
           <img
             src="/images/Logo.png"
             alt="Logotipo da empresa"
-            className="h-10 lg:h-16"
+            className="h-10 sm:h-12 lg:h-14"
           />
         </div>
 
-        {/* Botões de navegação - Desktop */}
-        <div className="hidden lg:flex space-x-10">
+        {/* Navegação Desktop */}
+        <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {["Home", "Soluções", "Benefícios", "Projetos", "Contato"].map(
             (item) => (
               <a
                 key={item}
                 href="#"
-                className="text-white hover:text-gray-400 transition-colors font-medium"
+                className="text-white text-sm xl:text-base hover:text-gray-400 transition-colors font-medium"
               >
                 {item}
               </a>
@@ -86,38 +84,38 @@ const Nav: React.FC = () => {
           )}
         </div>
 
-        {/* Botão de orçamento online - Desktop */}
-        <div className="hidden lg:flex flex-shrink-0">
-          <button className="bg-white text-black font-medium px-6 py-5 rounded-full hover:bg-blue-500 hover:text-white transition-all">
+        {/* Botão Desktop */}
+        <div className="hidden lg:block flex-shrink-0">
+          <button className="bg-white text-black text-sm xl:text-base font-medium px-4 py-4 xl:px-6 xl:py-4 rounded-full hover:bg-blue-500 hover:text-white transition-all">
             Faça um orçamento
           </button>
         </div>
 
-        {/* Menu Hambúrguer - Mobile e Tablet */}
+        {/* Menu Hambúrguer Mobile */}
         <div className="lg:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white mr-2 mt-1">
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Menu Mobile e Tablet */}
+      {/* Menu Mobile */}
       {isMenuOpen && (
         <motion.div
-          className={`lg:hidden absolute pt-8 top-14 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[380px]
-            border border-white/10 backdrop-blur-[4.5px] p-6 rounded-3xl flex flex-col items-center space-y-6 z-40
-            ${isScrolled ? "bg-[rgba(80,112,255,0.35)]" : "bg-[rgba(46,68,158,0.05)]"} transition-all duration-300`}
-          initial="hidden" // Estado inicial ao abrir
-          animate="visible" // Estado animado ao abrir
-          exit="exit" // Estado ao fechar
-          variants={menuVariants} // Variantes de animação
+          className={`lg:hidden absolute top-16 left-0 right-0 mx-4 sm:mx-6
+            border border-white/10 backdrop-blur-[4.5px] p-6 rounded-2xl flex flex-col items-center space-y-4
+            ${isScrolled ? "bg-[rgba(0,34,206,0.5)]" : "bg-[rgba(46,68,158,0.05)]"} transition-all duration-300`}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={menuVariants}
         >
           {["Home", "Soluções", "Benefícios", "Projetos", "Contato"].map(
             (item) => (
               <a
                 key={item}
                 href="#"
-                className="text-white text-lg hover:text-gray-300 transition-colors"
+                className="text-white text-base sm:text-lg hover:text-gray-300 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}
@@ -125,7 +123,7 @@ const Nav: React.FC = () => {
             )
           )}
           <button
-            className="bg-white text-black font-medium px-6 py-3 rounded-full hover:bg-blue-500 hover:text-white transition-all"
+            className="bg-white text-black text-sm sm:text-base font-medium px-6 py-2 rounded-full hover:bg-blue-500 hover:text-white transition-all"
             onClick={() => setIsMenuOpen(false)}
           >
             Faça um orçamento
