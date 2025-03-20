@@ -52,24 +52,24 @@ const Projects = () => {
             {visibleProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white border-2 border-gray-600/10 rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-4xl flex flex-col items-center justify-between"
+                className="bg-white border-2 border-gray-600/10 rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl hover:shadow-lg flex flex-col items-center justify-between transition-all duration-300 hover:translate-y-[-8px]"
               >
                 <Image
                   src={project.image}
                   alt={`Projeto ${project.id}`}
                   width={600}
                   height={250}
-                  className="rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-3xl w-full h-56 md:h-56 lg:h-64 object-cover"
+                  className="rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl w-full h-56 md:h-56 lg:h-64 object-cover"
                 />
                 <div className="bg-white p-2 sm:p-3 md:p-3 lg:p-4 rounded-full w-full flex items-center justify-between lg:mt-1">
                   <div className="flex sm:hidden lg:flex items-center gap-2">
-                    <div className="bg-gradient-to-b from-[#FFFFFF] to-[#CDDBFF] p-2 rounded-md shadow-md">
+                    <div className="border border-gray-200 rounded-lg sm:rounded-lg p-2 sm:p-2 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg">
                       <FaUser className="text-[#0024B4]" size={16} />
                     </div>
                     <span className="text-gray-800 text-sm">{project.title}</span>
                   </div>
                   <div className="flex items-center gap-1 sm:gap-2 p-2 lg:p-0 w-full sm:w-auto justify-between sm:justify-end">
-                    <div className="bg-gradient-to-b from-[#FFFFFF] to-[#CDDBFF] p-2 rounded-md shadow-md">
+                    <div className="border border-gray-200 rounded-lg sm:rounded-lg p-2 sm:p-2 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg">
                       <FaEnvelope className="text-[#0024B4]" size={16} />
                     </div>
                     <div className="flex items-center gap-1">

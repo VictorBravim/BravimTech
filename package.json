@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.30.0",
     "animejs": "^3.2.2",
     "clsx": "^2.1.1",
