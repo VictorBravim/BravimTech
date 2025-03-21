@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <section className="flex justify-center w-full bg-white py-4 lg:py-12">
+    <section id="Contato" className="flex justify-center w-full bg-white py-4 lg:py-12">
       <div className="bg-white py-12 lg:py-24 text-[#18181B] overflow-hidden flex justify-center container px-4 sm:px-6 md:px-16">
         <div
           className="text-white py-6 lg:py-32 rounded-4xl shadow-lg footer-container w-full text-center"

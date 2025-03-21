@@ -25,7 +25,7 @@ const Projects = () => {
   }
 
   return (
-    <section className="flex justify-center w-full bg-white py-4 lg:py-12">
+    <section id="Projetos" className="flex justify-center w-full bg-white py-4 lg:py-12">
       <div className="bg-white py-12 overflow-hidden relative w-full container px-4 sm:px-6 md:px-16">
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <div className="flex justify-center my-2">
@@ -52,7 +52,7 @@ const Projects = () => {
             {visibleProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white border-2 border-gray-600/10 rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl hover:shadow-lg flex flex-col items-center justify-between transition-all duration-300 hover:translate-y-[-8px]"
+                className=" border-2 border-gray-600/10 rounded-xl sm:rounded-2xl md:rounded-2xl lg:rounded-2xl hover:shadow-lg flex flex-col items-center justify-between transition-all duration-300 hover:translate-y-[-8px]"
               >
                 <Image
                   src={project.image}
@@ -76,7 +76,7 @@ const Projects = () => {
                       <div className="bg-gradient-to-b from-[#0751D4] to-[#0024B4] p-2 rounded-md shadow-md">
                         <FaArrowRight className="text-white" size={16} />
                       </div>
-                      <span className="text-gray-800 text-xs sm:text-sm">Saiba Mais</span>
+                      <span className="text-gray-800 text-xs sm:text-sm cursor-pointer">Saiba Mais</span>
                     </div>
                   </div>
                 </div>

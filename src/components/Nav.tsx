@@ -75,7 +75,7 @@ const Nav: React.FC = () => {
             (item) => (
               <a
                 key={item}
-                href="#"
+                href={item === 'Home' ? '#' : `#${item}`}
                 className="text-white text-sm xl:text-base hover:text-gray-400 transition-colors font-medium"
               >
                 {item}

@@ -88,7 +88,7 @@ export default function PricingCards() {
         {pricingOptions.map((option) => (
           <div
             key={option.id}
-            className="relative"
+            className="relative overflow-hidden"
             onMouseEnter={() => setHoveredCard(option.id)}
             onMouseLeave={() => setHoveredCard(null)}
           >
@@ -168,7 +168,7 @@ export default function PricingCards() {
                     className={`absolute -inset-0.5 bg-gradient-to-r ${option.color} rounded-lg blur opacity-10 group-hover:opacity-100 transition duration-500`}
                   />
                   <button
-                    className={`relative w-full py-6 text-base font-medium bg-white text-slate-800 hover:text-white hover:bg-gradient-to-r ${option.color} rounded-lg shadow-md transition-all duration-300`}
+                    className={`relative w-full py-6 text-base font-medium bg-white text-slate-800 hover:text-white hover:bg-gradient-to-r ${option.color} rounded-lg shadow-md transition-all duration-300 cursor-pointer`}
                   >
                     Solicitar Orçamento
                   </button>

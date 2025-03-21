@@ -7,6 +7,7 @@ import { SiAdobephotoshop, SiAdobeindesign, SiFirebase } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc";
 
 import { motion, AnimatePresence } from "framer-motion"
+import { ChevronUp } from "lucide-react"
 
 const About = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -176,15 +177,24 @@ const About = () => {
                       key={index}
                       onClick={() => setActiveTab(index)}
                       className={`w-full sm:w-auto sm:min-w-[150px] px-3 sm:px-4 py-2 font-medium text-sm sm:text-base lg:text-lg text-center transition-all relative ${activeTab === index ? "text-gray-900" : "text-gray-500 hover:text-gray-700"
-                        }`}
-                    >
-                      {service.title}
-                      {activeTab === index && (
-                        <motion.div
+                        } cursor-pointer flex justify-between`}
+                    > 
+
+                        {service.title}
+                        <span className={`block lg:hidden transition-transform ${
+                                activeTab === index
+                                  ? "transform rotate-180 text-blue-500"
+                                  : "text-gray-700"
+                              }`}>
+                        <ChevronUp/>
+                        </span>
+
+                        {activeTab === index && (
+                          <motion.div
                           className="absolute bottom-[-2px] left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500"
                           layoutId="activeTab"
-                        />
-                      )}
+                          />
+                        )}
                     </button>
                   ))}
                 </div>
@@ -237,7 +247,7 @@ const About = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">              
                   <button className="px-3 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-medium text-sm sm:text-base lg:text-lg text-white shadow-[0_0_15px_rgba(0,100,255,0.2)] hover:shadow-[0_0_20px_rgba(0,100,255,0.3)] transition-all">
                     BrandBook
                   </button>
