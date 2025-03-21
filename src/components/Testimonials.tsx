@@ -3,7 +3,7 @@ import Image from "next/image";
 import ClientCard from "@/components/ClientCard";
 import { motion, AnimatePresence } from "framer-motion";
 import anime from "animejs";
-import { FaGoogle } from "react-icons/fa"
+import { FaGoogle } from "react-icons/fa";
 import { useEffect, useRef, useState, useMemo } from "react";
 
 type Client = {
@@ -155,7 +155,10 @@ const Testimonial = () => {
         <div className="relative top-0">
           <ClientCard position="-left-24 top-[-25px]" name={clients[0].name} />
           <ClientCard position="-left-45 top-[235px]" name={clients[1].name} />
-          <ClientCard position="-left-24 bottom-[-25px]" name={clients[2].name} />
+          <ClientCard
+            position="-left-24 bottom-[-25px]"
+            name={clients[2].name}
+          />
 
           <svg
             width="298"
@@ -231,9 +234,7 @@ const Testimonial = () => {
               onMouseEnter={pauseInterval}
               onMouseLeave={startInterval}
             >
-              <motion.div
-                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg flex items-center gap-6 font-medium"
-              >
+              <motion.div className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg flex items-center gap-6 font-medium">
                 <Image
                   src="/images/TestimonalUser.svg"
                   alt="User"
@@ -246,10 +247,15 @@ const Testimonial = () => {
                     <p className="text-lg font-semibold">
                       {clients[index].name} {clients[index].surname || "Silva"}
                     </p>
-                    <FaGoogle className="text-gray-600 text-lg" title="Google Review" />
+                    <FaGoogle
+                      className="text-gray-600 text-lg"
+                      title="Google Review"
+                    />
                   </div>
                   <p className="text-sm text-gray-600">
-                    Projeto: {clients[index].project || "Desenvolvimento de Site"} | Prazo: {clients[index].deadline || "30 dias"}
+                    Projeto:{" "}
+                    {clients[index].project || "Desenvolvimento de Site"} |
+                    Prazo: {clients[index].deadline || "30 dias"}
                   </p>
                 </div>
               </motion.div>
@@ -268,7 +274,10 @@ const Testimonial = () => {
         <div className="top-0 relative">
           <ClientCard position="-right-24 top-[-25px]" name={clients[3].name} />
           <ClientCard position="-right-45 top-[235px]" name={clients[4].name} />
-          <ClientCard position="-right-24 bottom-[-25px]" name={clients[5].name} />
+          <ClientCard
+            position="-right-24 bottom-[-25px]"
+            name={clients[5].name}
+          />
 
           <svg
             width="298"

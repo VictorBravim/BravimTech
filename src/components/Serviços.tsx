@@ -1,5 +1,5 @@
-import { Code, Palette, Search } from "lucide-react"
-import Link from "next/link"
+import { Code, Palette, Search } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function ServicesSection() {
@@ -28,19 +28,33 @@ export default function ServicesSection() {
       stat: "O SEO pode aumentar em até 100%",
       gradient: "from-blue-600 to-indigo-500",
     },
-  ]
+  ];
 
   return (
-    <section className="flex justify-center w-full bg-white py-4 lg:py-12 pt-8 lg:pt-24">
+    <section id="Soluções" className="flex justify-center w-full bg-white py-4 lg:py-12 pt-8 lg:pt-24">
       <div className="container px-4 sm:px-6 md:px-16 flex flex-col justify-center items-center">
         <div className="text-center mb-2 lg:mb-12">
           <div className="flex justify-center my-2">
             <div className="bg-blue-600/10 text-white gap-2 py-2 px-2 flex items-center rounded-full">
-              <Image src="/images/Blue.svg" alt="Logo" width={28} height={28} className="mr-1" />
-              <h1 className="text-black text-sm sm:text-md font-medium mr-2" style={{ fontFamily: "var(--font-archivo)" }}>Fale Com a Gente</h1>
+              <Image
+                src="/images/Blue.svg"
+                alt="Logo"
+                width={28}
+                height={28}
+                className="mr-1"
+              />
+              <h1
+                className="text-black text-sm sm:text-md font-medium mr-2"
+                style={{ fontFamily: "var(--font-archivo)" }}
+              >
+                Fale Com a Gente
+              </h1>
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600" style={{ fontFamily: "var(--font-archivo)" }}>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600"
+            style={{ fontFamily: "var(--font-archivo)" }}
+          >
             Nossas Soluções
           </h2>
         </div>
@@ -49,44 +63,60 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg transition-all duration-300 hover:translate-y-[-8px] group relative overflow-hidden"
+              className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-[0_0_20px_rgba(0,100,255,0.05)] hover:shadow-lg transition-all duration-300 hover:translate-y-[-8px] group relative overflow-hidden group"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-5 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.2)_0%,transparent_60%)]"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 -mt-10 -mr-10 rounded-full bg-blue-50 opacity-20"></div>
 
-              <div
-                className={`mb-6 relative z-10 inline-flex p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${service.gradient} text-white shadow-lg`}
-              >
-                {service.icon}
+              {/* Decorative background elements */}
+              <div className="absolute inset-0 bg-white overflow-hidden">
+                <div className="absolute inset-0 opacity-30" />
+                <div className="absolute -right-20 -top-20 w-60 h-40 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 opacity-10 blur-xl group-hover:opacity-5 duration-100 ease-linear" />
+                <div className="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-gradient-to-tr from-blue-500 to-blue-700 opacity-10 blur-xl group-hover:opacity-5 duration-100 ease-linear" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
-
-              <p className="text-gray-600 mb-8 leading-relaxed text-sm sm:text-base">{service.description}</p>
-
-              <div className="flex items-center text-xs sm:text-sm text-gray-500 mb-6 border-l-4 border-blue-500 pl-3 py-1">
-                <span className="font-medium">{service.stat}</span>
-              </div>
-
-              <Link
-                href="#"
-                className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2 sm:py-3 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors font-medium group-hover:shadow-md text-sm sm:text-base"
-              >
-                <span>Saiba Mais</span>
-                <svg
-                  className="w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div className="relative z-10 ">
+                <div
+                  className={`mb-6 inline-flex p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${service.gradient} text-white shadow-lg group-hover:rotate-3 group-hover:transition-transform group-hover:duration-300`}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
+                  {service.icon}
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">
+                  {service.title}
+                </h3>
+
+                <p className="text-gray-600 mb-8 leading-relaxed text-sm sm:text-base">
+                  {service.description}
+                </p>
+
+                <div className="relative flex items-center text-xs sm:text-sm text-gray-500 mb-6 border-l-4 border-blue-500 pl-3 py-1">
+                  <span className="font-medium">{service.stat}</span>
+                </div>
+
+                <Link
+                  href="#"
+                  className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2 sm:py-3 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors font-medium group-hover:shadow-md text-sm sm:text-base"
+                >
+                  <span>Saiba Mais</span>
+                  <svg
+                    className="w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
