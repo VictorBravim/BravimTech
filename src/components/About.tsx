@@ -7,7 +7,7 @@ import { SiAdobephotoshop, SiAdobeindesign, SiFirebase } from "react-icons/si"
 import { VscVscode } from "react-icons/vsc";
 
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowDown, ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronUp } from "lucide-react"
 
 const About = () => {
   const [activeTab, setActiveTab] = useState(0)
